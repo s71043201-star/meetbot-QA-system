@@ -117,7 +117,7 @@
           '</div>' +
           '<span class="question-card-date">' + dateStr + '</span>' +
         '</div>' +
-        '<div class="question-card-body">' +
+        '<div class="question-card-body open">' +
           '<div class="question-contact">' +
             '聯絡人：' + escapeHtml(q.contactName) + ' ｜ 聯絡方式：' + escapeHtml(q.contactInfo) +
           '</div>' +
