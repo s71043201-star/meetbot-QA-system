@@ -258,10 +258,22 @@
   var cachedQuestions = [];
   var selectedIds = new Set();
 
+  // ── Unit button bar ──
+  var activeUnit = "";
+  var unitBtns = document.querySelectorAll(".unit-btn");
+  unitBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      unitBtns.forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      activeUnit = btn.getAttribute("data-unit");
+      loadQuestions();
+    });
+  });
+
   // ── Filters ──
   function getFilterParams() {
     var params = new URLSearchParams();
-    var unit = document.getElementById("filterUnit").value;
+    var unit = activeUnit;
     var status = document.getElementById("filterStatus").value;
     var category = document.getElementById("filterCategory").value;
     var dateFrom = document.getElementById("filterDateFrom").value;
