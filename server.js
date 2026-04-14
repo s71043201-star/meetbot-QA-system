@@ -25,10 +25,4 @@ app.get("/", (req, res) => res.redirect("/index.html"));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`QA 問題回報系統啟動，port ${PORT}`);
-
-  // ── 自我 ping（每 14 分鐘，防止 Render 免費方案休眠）──
-  const BASE = process.env.BASE_URL || "https://meetbot-qa-system.onrender.com";
-  setInterval(() => {
-    require("https").get(`${BASE}/health`, () => {}).on("error", () => {});
-  }, 14 * 60 * 1000);
 });
