@@ -3,7 +3,7 @@ const ExcelJS = require("exceljs");
 const router = express.Router();
 const { qaGet, qaPost, qaPut } = require("../firebase");
 
-const UNITS = ["工研院", "處方老師", "同仁", "診所", "民眾端"];
+const UNITS = ["衛服部", "健康處方管理系統", "合作診所相關", "社區駐點辦公室", "課務與社區資源", "行政與人事管理"];
 const STATUSES = ["待處理", "處理中", "已回覆", "已結案"];
 
 // ── 輔助：取得所有未刪除問題 ─────────────────────

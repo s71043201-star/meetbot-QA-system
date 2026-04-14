@@ -20,7 +20,7 @@ app.use(require("./src/routes/questions"));
 // ── Health check ─────────────────────────────
 app.get("/health", (req, res) => res.send("OK"));
 
-app.get("/", (req, res) => res.redirect("/qa-submit.html"));
+app.get("/", (req, res) => res.redirect("/index.html"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
